@@ -3,7 +3,7 @@ const bcrypt = require('bcryptjs');
 
 // Dummy user data (replace with database later)
 const users = [
-  { username: 'admin', password: bcrypt.hashSync('password123', 10) }
+  { username: 'admin', password: bcrypt.hashSync('password@123', 10) }
 ];
 
 const login = (req, res) => {
