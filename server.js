@@ -38,7 +38,14 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 
+
+
+
 const app = express();
+
+
+
+
 const authRoutes = require('./routes/authRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
 const mapRoutes = require('./routes/mapRoutes');
@@ -57,6 +64,11 @@ app.use(cors(corsOptions));
 app.use('/api/login', authRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/map', mapRoutes);
+
+
+
+
+
 app.get('/api/health', (req, res) => {
   res.send({ message: 'healthy' });
 });
@@ -68,5 +80,5 @@ app.use((req, res) => {
 // Cloud Run requires the app to listen on port 8080
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on ${PORT}`);
 });
