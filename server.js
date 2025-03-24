@@ -80,5 +80,5 @@ app.use((req, res) => {
 // Cloud Run requires the app to listen on port 8080
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(`Server running http://localhost:${PORT}`);
+  console.log(`Server running on ${PORT}`);
 });
